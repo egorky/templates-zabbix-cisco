@@ -1,0 +1,1769 @@
+{
+    "zabbix_export": {
+        "version": "6.0",
+        "date": "2025-06-16T14:48:13Z",
+        "groups": [
+            {
+                "uuid": "7df96b18c230490a9a0a9e2307226338",
+                "name": "Templates"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "65cd102dfa4d45fbb1faeebd26bef76c",
+                "template": "SNMP MPLS LDP",
+                "name": "SNMP MPLS LDP",
+                "description": "Template for monitoring MPLS LDP (Label Distribution Protocol) using SNMP, based on MPLS-LDP-STD-MIB (RFC 3815).",
+                "groups": [
+                    {
+                        "name": "Templates"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "6b8351f9d25949e9a4028f4fb2dceef4",
+                        "name": "MPLS LDP LSR ID",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.1.1.0",
+                        "key": "mplsLdpLsrId",
+                        "delay": "1h",
+                        "history": "7d",
+                        "trends": "0d",
+                        "value_type": "TEXT",
+                        "description": "The Label Switching Router's Identifier. (mplsLdpLsrId)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "df827f77f3ff4b648868c78187b9cedd",
+                        "name": "MPLS LDP LSR Loop Detection Capable",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.1.2.0",
+                        "key": "mplsLdpLsrLoopDetectionCapable",
+                        "delay": "1h",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "description": "An indication of whether this Label Switching Router supports loop detection. (mplsLdpLsrLoopDetectionCapable)",
+                        "valuemap": {
+                            "name": "MPLS LDP Loop Detection Capable"
+                        },
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7890c63628744774b6e8a68c30c6ba80",
+                        "name": "MPLS LDP Entity Last Change",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.1.0",
+                        "key": "mplsLdpEntityLastChange",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "units": "unixtime",
+                        "description": "SysUpTime of the most recent add/delete or change to mplsLdpEntityTable. (mplsLdpEntityLastChange)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2dd33985462a46249a99bd4f4a107b06",
+                        "name": "MPLS LDP Entity Index Next",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.2.0",
+                        "key": "mplsLdpEntityIndexNext",
+                        "delay": "1h",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "description": "Appropriate value for mplsLdpEntityIndex when creating entries. 0 means no unassigned entries. (mplsLdpEntityIndexNext)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "10410fccd3fe48e2a6cf9ddb45e561b0",
+                        "name": "MPLS LDP Peer Last Change",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.1.0",
+                        "key": "mplsLdpPeerLastChange",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "units": "unixtime",
+                        "description": "SysUpTime of the most recent add/delete to mplsLdpPeerTable/mplsLdpSessionTable. (mplsLdpPeerLastChange)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cece64edff7c47e59be9e103cf22cd9a",
+                        "name": "MPLS FEC Last Change",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.8.1.0",
+                        "key": "mplsFecLastChange",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "units": "unixtime",
+                        "description": "SysUpTime of the most recent add/delete or change to mplsLdpFecTable. (mplsFecLastChange)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cb3f4b43f4fc4e4b95d25201c7371708",
+                        "name": "MPLS FEC Index Next",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.8.2.0",
+                        "key": "mplsFecIndexNext",
+                        "delay": "1h",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "description": "Appropriate value for mplsFecIndex when creating entries. 0 means no unassigned entries. (mplsFecIndexNext)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b4bbdd47136343d8a44c004469cc1325",
+                        "name": "MPLS LDP LSP FEC Last Change",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.9.0",
+                        "key": "mplsLdpLspFecLastChange",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "UNSIGNED",
+                        "units": "unixtime",
+                        "description": "SysUpTime of the most recent add/delete or change to mplsLdpLspFecTable. (mplsLdpLspFecLastChange)",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "MPLS_LDP"
+                            }
+                        ]
+                    }
+                ],
+                "discovery_rules": [
+                    {
+                        "uuid": "ec94392130f1471b86c9eaa8f26a3083",
+                        "name": "MPLS LDP Entities",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SNMPENTITYKEY},.1.3.6.1.2.1.10.166.4.1.2.3.1.2]",
+                        "key": "mplsLdpEntity.discovery",
+                        "delay": "1h",
+                        "lifetime": "30d",
+                        "description": "Discovery of MPLS LDP Entities (mplsLdpEntityTable) and their statistics (mplsLdpEntityStatsTable). {#SNMPENTITYKEY} is the combined LDP ID and Entity Index.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "bf21dd1275af41a597ea6d7e5bbd527e",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: LDP ID",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.1.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityLdpId[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "0d",
+                                "value_type": "TEXT",
+                                "description": "The LDP identifier for entity represented by mplsLdpEntityIndex {#SNMPENTITYKEY}. (mplsLdpEntityLdpId)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "96bf111b802549cdafc9e8d4c04e8861",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Protocol Version",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.3.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityProtocolVersion[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "LDP protocol version for entity {#SNMPENTITYKEY}. (mplsLdpEntityProtocolVersion)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "bb6a4975e3d44555897c76e2dc7daa25",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Admin Status",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.4.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityAdminStatus[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Administrative status of LDP Entity {#SNMPENTITYKEY}. (mplsLdpEntityAdminStatus)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Entity Admin Status"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "9725996ecbf144fa859d86c12bfee6eb",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Operational Status",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.5.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityOperStatus[{#SNMPENTITYKEY}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Operational status of LDP Entity {#SNMPENTITYKEY}. (mplsLdpEntityOperStatus)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Entity Oper Status"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "2366f07ec24647079f8003df0e635fbc",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: TCP Port",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.6.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityTcpPort[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "LDP TCP Port for entity {#SNMPENTITYKEY}. (mplsLdpEntityTcpPort)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "e31ec71dba2448338b6c23991d03be6a",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: UDP Discovery Port",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.7.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityUdpDscPort[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "LDP UDP Discovery Port for entity {#SNMPENTITYKEY}. (mplsLdpEntityUdpDscPort)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5eea90c14be040dcaca85fcb29daf5f9",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Max PDU Length",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.8.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityMaxPduLength[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "octets",
+                                "description": "Max PDU Length sent in Initialization Message for entity {#SNMPENTITYKEY}. (mplsLdpEntityMaxPduLength)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "11f2eb2d197a41a0b333e463fb6c30dd",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: KeepAlive Hold Timer",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.9.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityKeepAliveHoldTimer[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "Proposed KeepAlive Hold Timer for entity {#SNMPENTITYKEY}. (mplsLdpEntityKeepAliveHoldTimer)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "0edb3972611744e2a8d6ac91e99cadeb",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Hello Hold Timer",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.10.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityHelloHoldTimer[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "Proposed Hello Hold Timer for entity {#SNMPENTITYKEY}. (mplsLdpEntityHelloHoldTimer)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5a0925cc64f74183913947205f082281",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Init Session Threshold",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.11.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityInitSessionThreshold[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Threshold for mplsLdpInitSessionThresholdExceeded notification for entity {#SNMPENTITYKEY}. (mplsLdpEntityInitSessionThreshold)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "ff3277e3a26c4d0c8d661313501faab6",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Label Distribution Method",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.12.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityLabelDistMethod[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Label distribution method for entity {#SNMPENTITYKEY}. (mplsLdpEntityLabelDistMethod)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Label Dist Method"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "e8dc696c6c554e7486e2cbd357ce46e7",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Label Retention Mode",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.13.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityLabelRetentionMode[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Label retention mode for entity {#SNMPENTITYKEY}. (mplsLdpEntityLabelRetentionMode)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Label Retention Mode"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "705c6835e1a44330a8784e796e331d49",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Path Vector Limit",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.14.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityPathVectorLimit[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Path Vector Limit for loop detection for entity {#SNMPENTITYKEY}. (mplsLdpEntityPathVectorLimit)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "7af0c0cafecd41efbd103aef7d16a6c2",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Hop Count Limit",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.15.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityHopCountLimit[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Hop Count Limit for loop detection for entity {#SNMPENTITYKEY}. (mplsLdpEntityHopCountLimit)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "8809b3f08b154726ae896ac97bd23d29",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Transport Address Kind",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.16.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityTransportAddrKind[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Transport address kind (interface/loopback) for Hello messages for entity {#SNMPENTITYKEY}. (mplsLdpEntityTransportAddrKind)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Transport Addr Kind"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "3996a467af03461a8819597c4f2dbd57",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Targeted Peer",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.17.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityTargetPeer[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Whether LDP entity {#SNMPENTITYKEY} uses a targeted peer (true/false). (mplsLdpEntityTargetPeer)",
+                                "valuemap": {
+                                    "name": "TruthValue"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "9a2698da8f61466b9dcc1b4977f43d31",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Target Peer Addr Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.18.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityTargetPeerAddrType[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Address type for Extended Discovery target peer for entity {#SNMPENTITYKEY}. (mplsLdpEntityTargetPeerAddrType)",
+                                "valuemap": {
+                                    "name": "InetAddressType"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "c3a0517f370241c396afe6b793f06eca",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Target Peer Addr",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.19.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityTargetPeerAddr[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "0d",
+                                "value_type": "TEXT",
+                                "description": "Address for Extended Discovery target peer for entity {#SNMPENTITYKEY}. (mplsLdpEntityTargetPeerAddr)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "89c92d94067c4624a2afd00184ba68b4",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Label Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.20.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityLabelType[{#SNMPENTITYKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Optional parameters for LDP Initialization Message for entity {#SNMPENTITYKEY}. (mplsLdpEntityLabelType)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Label Type"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "c1def0cef45c43829901e4186e6460fc",
+                                "name": "LDP Entity [{#SNMPENTITYKEY}]: Discontinuity Time",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.3.1.21.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityDiscontinuityTime[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "unixtime",
+                                "description": "SysUpTime of the most recent counter discontinuity for entity {#SNMPENTITYKEY}. (mplsLdpEntityDiscontinuityTime)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "50075c2420a24c408263737531fae155",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: Session Attempts",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.1.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsSessionAttempts[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of failed session initializations for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsSessionAttempts)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5d0491947dd54521998b3f5aaf2e7075",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: Session Rejected No Hello Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.2.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsSessionRejectedNoHelloErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of Session Rejected/No Hello Error Notifications for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsSessionRejectedNoHelloErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "be2f438b1cac465cbd7a3e5fc83d4daa",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: SessionRejectedAd Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.3.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsSessionRejectedAdErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of SessionRejectedAd Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsSessionRejectedAdErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "4d1ba62ad5744b85aa33119dc87f0f2b",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: SessionRejectedMaxPdu Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.4.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsSessionRejectedMaxPduErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of SessionRejectedMaxPdu Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsSessionRejectedMaxPduErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "6f7eed0ece654eb9a3775dcbdbe8ddfd",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: SessionRejectedLR Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.5.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsSessionRejectedLRErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of SessionRejectedLR Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsSessionRejectedLRErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "d2e8c8df939343bba3dfe3e29f6ed49d",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: BadLdpIdentifier Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.6.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsBadLdpIdentifierErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of BadLdpIdentifier Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsBadLdpIdentifierErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "413ebc9a08c5425181fe0c2a9621a324",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: BadPduLength Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.7.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsBadPduLengthErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of BadPduLength Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsBadPduLengthErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "86e2126cc386479f8068745b75ed6922",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: BadMessageLength Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.8.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsBadMessageLengthErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of BadMessageLength Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsBadMessageLengthErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5b8dc38dfd574a2294790003b9b8b693",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: BadTlvLength Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.9.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsBadTlvLengthErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of BadTlvLength Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsBadTlvLengthErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "0211aa55d49d4cd48c1d848ccd2b9261",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: MalformedTlvValue Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.10.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsMalformedTlvValueErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of MalformedTlvValue Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsMalformedTlvValueErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "472ecd927fa8439297495dcc96adafd0",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: KeepAliveTimerExp Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.11.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsKeepAliveTimerExpErrors[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of KeepAliveTimerExp Errors for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsKeepAliveTimerExpErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "abb5752c2ed14a4387ddb3838f60c7e5",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: ShutdownReceived Notifications",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.12.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsShutdownReceivedNotifications[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of ShutdownReceived Notifications for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsShutdownReceivedNotifications)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "f8e22a4304074ce99b6910722655c547",
+                                "name": "LDP Entity Stats [{#SNMPENTITYKEY}]: ShutdownSent Notifications",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.2.4.1.13.{#SNMPENTITYKEY}",
+                                "key": "mplsLdpEntityStatsShutdownSentNotifications[{#SNMPENTITYKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of ShutdownSent Notifications for entity {#SNMPENTITYKEY}. (mplsLdpEntityStatsShutdownSentNotifications)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Entity_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Entity_Key",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "trigger_prototypes": [
+                            {
+                                "uuid": "d6bf7bf2a8ba4d409aa058c0f50de2c5",
+                                "expression": "(last(/SNMP MPLS LDP/mplsLdpEntityOperStatus[{#SNMPENTITYKEY}])<>2)",
+                                "name": "MPLS LDP Entity [{#SNMPENTITYKEY}] Operational Status is not Enabled",
+                                "priority": "WARNING",
+                                "description": "MPLS LDP Entity with key {#SNMPENTITYKEY} operational status is not 'enabled(2)'. Current state: {{ITEM.LASTVALUE}}.",
+                                "tags": [
+                                    {
+                                        "tag": "MPLS_LDP_Entity_Status",
+                                        "value": "{#SNMPENTITYKEY}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ca9ad3bbf2ee4b4f83b95a503a9733b1",
+                        "name": "MPLS LDP Sessions",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#LDPSESSIONKEY},.1.3.6.1.2.1.10.166.4.1.3.2.1.1]",
+                        "key": "mplsLdpSession.discovery",
+                        "delay": "1h",
+                        "lifetime": "30d",
+                        "description": "Discovery of MPLS LDP Peers (mplsLdpPeerTable), Sessions (mplsLdpSessionTable), and their statistics (mplsLdpSessionStatsTable). {#LDPSESSIONKEY} is EntityLdpId.EntityIndex.PeerLdpId.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "8118de4b14304eb1a4efc2e825204d86",
+                                "name": "LDP Session Peer [{#LDPSESSIONKEY}]: Label Dist Method",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.2.1.2.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpPeerLabelDistMethod[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Label distribution method for LDP Peer in session {#LDPSESSIONKEY}. (mplsLdpPeerLabelDistMethod)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Label Dist Method"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "0b68ddb123914993a569ba28bfd3fca6",
+                                "name": "LDP Session Peer [{#LDPSESSIONKEY}]: Path Vector Limit",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.2.1.3.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpPeerPathVectorLimit[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Path Vector Limit for loop detection for Peer in session {#LDPSESSIONKEY}. (mplsLdpPeerPathVectorLimit)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "e7b933a03bff44258ead800f7b9a52b8",
+                                "name": "LDP Session Peer [{#LDPSESSIONKEY}]: Transport Addr Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.2.1.4.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpPeerTransportAddrType[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Transport address type for Peer in session {#LDPSESSIONKEY}. (mplsLdpPeerTransportAddrType)",
+                                "valuemap": {
+                                    "name": "InetAddressType"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "d32aec60f7924082a40881f09f0cc91e",
+                                "name": "LDP Session Peer [{#LDPSESSIONKEY}]: Transport Addr",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.2.1.5.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpPeerTransportAddr[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "0d",
+                                "value_type": "TEXT",
+                                "description": "Transport address for Peer in session {#LDPSESSIONKEY}. (mplsLdpPeerTransportAddr)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "d178850296e74dc993d981ce057a08e9",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: State Last Change",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.1.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionStateLastChange[{#LDPSESSIONKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "unixtime",
+                                "description": "SysUpTime of last state change for session {#LDPSESSIONKEY}. (mplsLdpSessionStateLastChange)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "fad3d6bf38a14817bfd6e1b1803fd76f",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: State",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.2.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionState[{#LDPSESSIONKEY}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Current state of LDP session {#LDPSESSIONKEY}. (mplsLdpSessionState)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Session State"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "09d1f6e99b1549108ac3f5102dbbd4b9",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: Role",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.3.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionRole[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Role (active/passive) of this LSR/LER in session {#LDPSESSIONKEY} establishment. (mplsLdpSessionRole)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Session Role"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "85bafb05c55044f6ae9f293b24136698",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: Protocol Version",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.4.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionProtocolVersion[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Negotiated LDP protocol version for session {#LDPSESSIONKEY}. (mplsLdpSessionProtocolVersion)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "91b31ee336834a6a9be6bae10c799fcd",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: KeepAlive Hold Time Remaining",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.5.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionKeepAliveHoldTimeRem[{#LDPSESSIONKEY}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "KeepAlive hold time remaining for session {#LDPSESSIONKEY}. (mplsLdpSessionKeepAliveHoldTimeRem)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "f45afaec908145e4a96c5b5dee4c43a1",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: KeepAlive Time",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.6.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionKeepAliveTime[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "Negotiated KeepAlive Time for session {#LDPSESSIONKEY}. (mplsLdpSessionKeepAliveTime)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "9776dda88b124ebabfdab595d9173c25",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: Max PDU Length",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.7.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionMaxPduLength[{#LDPSESSIONKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "octets",
+                                "description": "Negotiated Max PDU Length for session {#LDPSESSIONKEY}. (mplsLdpSessionMaxPduLength)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "59c18ff3344a498dbc40ec2640d77a21",
+                                "name": "LDP Session [{#LDPSESSIONKEY}]: Discontinuity Time",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.3.1.8.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionDiscontinuityTime[{#LDPSESSIONKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "unixtime",
+                                "description": "SysUpTime of most recent counter discontinuity for session {#LDPSESSIONKEY}. (mplsLdpSessionDiscontinuityTime)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "77781310076d46789774e46cd6731887",
+                                "name": "LDP Session Stats [{#LDPSESSIONKEY}]: Unknown Message Type Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.4.1.1.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionStatsUnknownMesTypeErrors[{#LDPSESSIONKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of Unknown Message Type Errors for session {#LDPSESSIONKEY}. (mplsLdpSessionStatsUnknownMesTypeErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "ef7c160c5d3a4de3b632d3af4d8685f3",
+                                "name": "LDP Session Stats [{#LDPSESSIONKEY}]: Unknown TLV Errors",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.4.1.2.{#LDPSESSIONKEY}",
+                                "key": "mplsLdpSessionStatsUnknownTlvErrors[{#LDPSESSIONKEY}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "units": "cps",
+                                "description": "Rate of Unknown TLV Errors for session {#LDPSESSIONKEY}. (mplsLdpSessionStatsUnknownTlvErrors)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Session_Stats"
+                                    },
+                                    {
+                                        "tag": "LDP_Session_Key",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "trigger_prototypes": [
+                            {
+                                "uuid": "c9a5caa0384a4c538c3b681cc7f48278",
+                                "expression": "(last(/SNMP MPLS LDP/mplsLdpSessionState[{#LDPSESSIONKEY}])<>5)",
+                                "name": "MPLS LDP Session [{#LDPSESSIONKEY}] is not Operational",
+                                "priority": "HIGH",
+                                "description": "MPLS LDP Session with key {#LDPSESSIONKEY} is not 'operational(5)'. Current state: {{ITEM.LASTVALUE}}.",
+                                "tags": [
+                                    {
+                                        "tag": "MPLS_LDP_Session_Status",
+                                        "value": "{#LDPSESSIONKEY}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b4628520cb924077adaf2b46e41b4f43",
+                        "name": "MPLS LDP Hello Adjacencies",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#LDPHELLOADJKEY},.1.3.6.1.2.1.10.166.4.1.3.5.1.1.1]",
+                        "key": "mplsLdpHelloAdjacency.discovery",
+                        "delay": "10m",
+                        "lifetime": "7d",
+                        "description": "Discovery of MPLS LDP Hello Adjacencies (mplsLdpHelloAdjacencyTable). {#LDPHELLOADJKEY} is EntityLdpId.EntityIndex.PeerLdpId.HelloAdjacencyIndex.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "7be1e4ccf08c4891b88a92c8151be16d",
+                                "name": "LDP Hello Adjacency [{#LDPHELLOADJKEY}]: Hold Time Remaining",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.5.1.1.2.{#LDPHELLOADJKEY}",
+                                "key": "mplsLdpHelloAdjacencyHoldTimeRem[{#LDPHELLOADJKEY}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "Time remaining for this Hello Adjacency [{#LDPHELLOADJKEY}] to receive its next Hello Message. (mplsLdpHelloAdjacencyHoldTimeRem)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Hello_Adj"
+                                    },
+                                    {
+                                        "tag": "LDP_Hello_Adj_Key",
+                                        "value": "{#LDPHELLOADJKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "4b00c763fac24ac0920ca13d50351ee1",
+                                "name": "LDP Hello Adjacency [{#LDPHELLOADJKEY}]: Hold Time",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.5.1.1.3.{#LDPHELLOADJKEY}",
+                                "key": "mplsLdpHelloAdjacencyHoldTime[{#LDPHELLOADJKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "units": "s",
+                                "description": "Negotiated Hello hold time for adjacency {#LDPHELLOADJKEY}. 0 means default (15s Link, 45s Targeted), 65535 infinite. (mplsLdpHelloAdjacencyHoldTime)",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Hello_Adj"
+                                    },
+                                    {
+                                        "tag": "LDP_Hello_Adj_Key",
+                                        "value": "{#LDPHELLOADJKEY}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "f8c0fc05a764454aa59f75087e0aeb6e",
+                                "name": "LDP Hello Adjacency [{#LDPHELLOADJKEY}]: Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.2.1.10.166.4.1.3.5.1.1.4.{#LDPHELLOADJKEY}",
+                                "key": "mplsLdpHelloAdjacencyType[{#LDPHELLOADJKEY}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "UNSIGNED",
+                                "description": "Type of Hello Adjacency (link or targeted) for {#LDPHELLOADJKEY}. (mplsLdpHelloAdjacencyType)",
+                                "valuemap": {
+                                    "name": "MPLS LDP Hello Adjacency Type"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "MPLS_LDP_Hello_Adj"
+                                    },
+                                    {
+                                        "tag": "LDP_Hello_Adj_Key",
+                                        "value": "{#LDPHELLOADJKEY}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "trigger_prototypes": []
+                    }
+                ],
+                "valuemaps": [
+                    {
+                        "uuid": "2d0e606f40964e94bf8ab3de71cec1eb",
+                        "name": "MPLS LDP Loop Detection Capable",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "none"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "other"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "hopCount"
+                            },
+                            {
+                                "value": "4",
+                                "newvalue": "pathVector"
+                            },
+                            {
+                                "value": "5",
+                                "newvalue": "hopCountAndPathVector"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ddec2b5101224e0481aa58ac04015128",
+                        "name": "MPLS LDP Entity Admin Status",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "enable"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "disable"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2bab41457d9d4efb92569e8686f73c83",
+                        "name": "MPLS LDP Entity Oper Status",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "unknown"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "enabled"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "disabled"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5c22a671de99444980ed7b9ff0ca1d95",
+                        "name": "MPLS LDP Label Dist Method",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "perPlatform"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "perInterface"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f2cecfd4a2ea43a59cb9fd40be22ed34",
+                        "name": "MPLS LDP Label Retention Mode",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "conservative"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "liberal"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "4f3c4c865b3f4456962faade87ab706a",
+                        "name": "MPLS LDP Transport Addr Kind",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "interface"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "loopback"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "af0f464c1af44dacb66e689227a6a496",
+                        "name": "TruthValue",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "true"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "false"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cfa19542bdef4b779c22a592e55fba3c",
+                        "name": "MPLS LDP Label Type",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "generic"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "atm"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "frameRelay"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "1dff67b730c24bc3becbdbc1c1478371",
+                        "name": "MPLS LDP Session State",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "nonexistent"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "initialized"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "openrec"
+                            },
+                            {
+                                "value": "4",
+                                "newvalue": "opensent"
+                            },
+                            {
+                                "value": "5",
+                                "newvalue": "operational"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f8dddf0347674ef78eef5107a3c87193",
+                        "name": "MPLS LDP Session Role",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "unknown"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "active"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "passive"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "212154378e0f4dbf97637bb853ee58ff",
+                        "name": "MPLS LDP Hello Adjacency Type",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "link"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "targeted"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "74d980961869416eadbd61c06f003105",
+                        "name": "MPLS FEC Type",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "prefix"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "hostAddress"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "d22f72fdeab444848b68045af155f224",
+                        "name": "InetAddressType",
+                        "mappings": [
+                            {
+                                "value": "0",
+                                "newvalue": "unknown"
+                            },
+                            {
+                                "value": "1",
+                                "newvalue": "ipv4"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "ipv6"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "ipv4z"
+                            },
+                            {
+                                "value": "4",
+                                "newvalue": "ipv6z"
+                            },
+                            {
+                                "value": "16",
+                                "newvalue": "dns"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "graphs": []
+    }
+}
