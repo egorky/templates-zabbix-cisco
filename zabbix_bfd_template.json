@@ -1,0 +1,882 @@
+{
+    "zabbix_export": {
+        "version": "6.0",
+        "date": "2025-06-16T14:48:13Z",
+        "groups": [
+            {
+                "uuid": "7df96b18c230490a9a0a9e2307226338",
+                "name": "Templates"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "c57115cd-99a7-480f-93db-bd08f3c7b1cc",
+                "template": "SNMP Cisco BFD",
+                "name": "SNMP Cisco BFD",
+                "description": "Template for monitoring Cisco BFD (Bidirectional Forwarding Detection) using SNMP. Based on ciscoIetfBfdMIB.",
+                "groups": [
+                    {
+                        "name": "Templates"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "7d73654e-d828-4fb9-878b-ed1517d47c2a",
+                        "name": "BFD Admin Status",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.1.1",
+                        "key": "ciscoBfdAdminStatus",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "description": "The global administrative status of BFD in this router. The value enabled denotes that the BFD Process is active on at least one interface; disabled means it is not enabled on any interface.",
+                        "valuemap": {
+                            "name": "SNMP BFD Admin Status"
+                        },
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "BFD"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f69d6df9-bac5-4cda-a95c-6487ae5e3001",
+                        "name": "BFD Version Number",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.1.3",
+                        "key": "ciscoBfdVersionNumber",
+                        "delay": "1h",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "INTEGER",
+                        "description": "The current default version number of the BFD protocol.",
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "BFD"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e15ae4fd-763b-4392-a92c-128e690fd9ce",
+                        "name": "BFD Session Notifications Enable",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.1.4",
+                        "key": "ciscoBfdSessNotificationsEnable",
+                        "delay": "5m",
+                        "history": "7d",
+                        "trends": "365d",
+                        "value_type": "INTEGER",
+                        "description": "Enables the emission of ciscoBfdSessUp and ciscoBfdSessDown notifications when set to true (1); otherwise these notifications are not emitted.",
+                        "valuemap": {
+                            "name": "SNMP Boolean"
+                        },
+                        "tags": [
+                            {
+                                "tag": "Application",
+                                "value": "BFD"
+                            }
+                        ]
+                    }
+                ],
+                "discovery_rules": [
+                    {
+                        "uuid": "70efaed8-c056-4df9-91dd-b4cc6008064c",
+                        "name": "BFD Sessions",
+                        "type": "SNMP_AGENT",
+                        "snmp_oid": "discovery[{#SNMPVALUE},.1.3.6.1.4.1.9.10.137.1.2.1.1]",
+                        "key": "bfdSessIndex",
+                        "delay": "5m",
+                        "lifetime": "1h",
+                        "description": "Discovery of BFD sessions from ciscoBfdSessTable using ciscoBfdSessIndex.",
+                        "item_prototypes": [
+                            {
+                                "uuid": "bc770e3d-6d65-4115-8fc5-072afeb37563",
+                                "name": "BFD Session {#SNMPVALUE}: Application ID",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.2.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessApplicationId[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Application ID for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "50fd28f3-722a-4a4c-9336-85489cfff67c",
+                                "name": "BFD Session {#SNMPVALUE}: Local Discriminator",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.3.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessDiscriminator[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Local discriminator for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "a5ef90e9-70b4-40a1-a35b-1caf13494933",
+                                "name": "BFD Session {#SNMPVALUE}: Remote Discriminator",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.4.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessRemoteDiscr[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Remote discriminator for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "8d6fe287-77f6-4352-868e-a3bf5bc6f911",
+                                "name": "BFD Session {#SNMPVALUE}: UDP Port",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.5.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessUdpPort[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "UDP Port for BFD session {#SNMPVALUE}. Default is well-known port.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "2b2b28f8-f02f-4bf9-87b8-59f8ed12f6f4",
+                                "name": "BFD Session {#SNMPVALUE}: State",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.6.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessState[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Perceived state of BFD session {#SNMPVALUE}. (1:adminDown, 2:down, 3:init, 4:up)",
+                                "valuemap": {
+                                    "name": "SNMP BFD Session State"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "cc342b52-ff3e-47e5-aabd-8958f85842c0",
+                                "name": "BFD Session {#SNMPVALUE}: Remote Heard Flag",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.7.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessRemoteHeardFlag[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "0d",
+                                "description": "Status of BFD packet reception from the remote system for session {#SNMPVALUE}. (1:true, 0:false). Applicable for BFD version 0.",
+                                "valuemap": {
+                                    "name": "SNMP Boolean"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "4e94caf2-057b-4b75-8a86-76fe84a44f8f",
+                                "name": "BFD Session {#SNMPVALUE}: Diagnostic Code",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.8.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessDiag[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Diagnostic code for last session transition for BFD session {#SNMPVALUE}.",
+                                "valuemap": {
+                                    "name": "SNMP BFD Session Diag"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "ca39f919-4820-4728-93cd-2acb7162b3ba",
+                                "name": "BFD Session {#SNMPVALUE}: Operational Mode",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.9.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessOperMode[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Current operating mode of BFD session {#SNMPVALUE}. (1:asyncModeWEchoFun, 2:asynchModeWOEchoFun)",
+                                "valuemap": {
+                                    "name": "SNMP BFD Session OperMode"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "e6b068a0-1565-4e3a-b8c5-f5790d0f0541",
+                                "name": "BFD Session {#SNMPVALUE}: Address Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.13.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessAddrType[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "IP address type for BFD session {#SNMPVALUE}. (0:unknown, 1:ipv4, 2:ipv6)",
+                                "valuemap": {
+                                    "name": "SNMP BFD Address Type"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "b5698fd0-79b3-48c2-9d68-a50805e0a220",
+                                "name": "BFD Session {#SNMPVALUE}: Address",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.14.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessAddr[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "0d",
+                                "value_type": "CHAR",
+                                "description": "IP address associated with BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "64763de7-1d61-45a7-a7bd-cd44427f3f46",
+                                "name": "BFD Session {#SNMPVALUE}: Desired Min Tx Interval",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.15.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessDesiredMinTxInterval[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "units": "\u00b5s",
+                                "description": "Desired minimum transmit interval in microseconds for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "ae73e42f-a621-42e2-a068-207a2399aad7",
+                                "name": "BFD Session {#SNMPVALUE}: Required Min Rx Interval",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.16.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessReqMinRxInterval[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "units": "\u00b5s",
+                                "description": "Required minimum receive interval in microseconds for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "b65dc8e7-2ce2-4134-8690-fde1d3647852",
+                                "name": "BFD Session {#SNMPVALUE}: Required Min Echo Rx Interval",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.17.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessReqMinEchoRxInterval[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "units": "\u00b5s",
+                                "description": "Required minimum echo receive interval in microseconds for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "2939b82d-9845-48db-b9dd-46605f938c82",
+                                "name": "BFD Session {#SNMPVALUE}: Detection Multiplier",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.18.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessDetectMult[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Detection time multiplier for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "32e408bd-da87-42bb-aa1a-2dfe7283c554",
+                                "name": "BFD Session {#SNMPVALUE}: Version Number",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.23.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessVersionNumber[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "BFD protocol version number for session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "c4fe5705-ad9b-4cb2-9676-7292c2455e41",
+                                "name": "BFD Session {#SNMPVALUE}: Type",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.24.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessType[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Type of BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "40423742-fa1a-4b26-97b1-ffba18debd62",
+                                "name": "BFD Session {#SNMPVALUE}: Interface IfIndex",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.2.1.25.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessInterface[{#SNMPINDEX}]",
+                                "delay": "1h",
+                                "history": "7d",
+                                "trends": "365d",
+                                "description": "Interface IfIndex for BFD session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "7c680de8-a16d-4f22-98a0-1f98054f41c3",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts In",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.1.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfPktIn[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "INTEGER",
+                                "description": "Total BFD messages received for session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsIn"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "4cd42659-a905-45e5-ab7b-222363aa81e7",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts Out",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.2.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfPktOut[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "INTEGER",
+                                "description": "Total BFD messages transmitted for session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsOut"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "3282a04f-2e2a-4ed4-87f5-a50965e6cded",
+                                "name": "BFD Session {#SNMPVALUE}: Uptime",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.3.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessUpTime[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "units": "uptime",
+                                "value_type": "INTEGER",
+                                "description": "SysUpTime of the most recent session up event for session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "Uptime"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5c45bdb4-4df6-48b7-b3ce-a0964a2da941",
+                                "name": "BFD Session {#SNMPVALUE}: Last Down Time",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.4.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfLastSessDownTime[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "units": "uptime",
+                                "value_type": "INTEGER",
+                                "description": "SysUpTime of the most recent session down event for session {#SNMPVALUE}.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "LastDownTime"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "e08771dd-83e3-4131-bfe2-c467e9d9ba03",
+                                "name": "BFD Session {#SNMPVALUE}: Session Up Count",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.6.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfSessUpCount[{#SNMPINDEX}]",
+                                "delay": "5m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "INTEGER",
+                                "description": "Number of times session {#SNMPVALUE} has gone to 'up' state since router reboot.",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "UpCount"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "614598d3-c7b1-41ba-bcb7-2597be04921f",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts In (HC)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.8.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfPktInHC[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "INTEGER",
+                                "description": "Total BFD messages received for session {#SNMPVALUE} (High Capacity).",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsInHC"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "5af982d3-84e5-4ed2-91e0-a2e0167b7d21",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts Out (HC)",
+                                "type": "SNMP_AGENT",
+                                "snmp_oid": ".1.3.6.1.4.1.9.10.137.1.3.1.9.{#SNMPINDEX}",
+                                "key": "ciscoBfdSessPerfPktOutHC[{#SNMPINDEX}]",
+                                "delay": "1m",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "INTEGER",
+                                "description": "Total BFD messages transmitted for session {#SNMPVALUE} (High Capacity).",
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsOutHC"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "90ff9103-587f-47b0-8a81-37c18e835b4a",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts In Rate (HC)",
+                                "type": "DEPENDENT",
+                                "key": "ciscoBfdSessPerfPktInRateHC[{#SNMPINDEX}]",
+                                "delay": "0",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "FLOAT",
+                                "units": "cps",
+                                "description": "Rate of BFD messages received for session {#SNMPVALUE} (High Capacity).",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "master_item": {
+                                    "key": "ciscoBfdSessPerfPktInHC[{#SNMPINDEX}]"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsInRateHC"
+                                    }
+                                ]
+                            },
+                            {
+                                "uuid": "d61c9d53-8791-42b4-bbdd-365862cb80b7",
+                                "name": "BFD Session {#SNMPVALUE}: Perf Pkts Out Rate (HC)",
+                                "type": "DEPENDENT",
+                                "key": "ciscoBfdSessPerfPktOutRateHC[{#SNMPINDEX}]",
+                                "delay": "0",
+                                "history": "7d",
+                                "trends": "365d",
+                                "value_type": "FLOAT",
+                                "units": "cps",
+                                "description": "Rate of BFD messages transmitted for session {#SNMPVALUE} (High Capacity).",
+                                "preprocessing": [
+                                    {
+                                        "type": "CHANGE_PER_SECOND",
+                                        "parameters": [
+                                            ""
+                                        ]
+                                    }
+                                ],
+                                "master_item": {
+                                    "key": "ciscoBfdSessPerfPktOutHC[{#SNMPINDEX}]"
+                                },
+                                "tags": [
+                                    {
+                                        "tag": "Application",
+                                        "value": "BFD"
+                                    },
+                                    {
+                                        "tag": "BFD Session",
+                                        "value": "{#SNMPVALUE}"
+                                    },
+                                    {
+                                        "tag": "BFD Performance",
+                                        "value": "PacketsOutRateHC"
+                                    }
+                                ]
+                            }
+                        ],
+                        "trigger_prototypes": [
+                            {
+                                "uuid": "86902a87-58dc-4a57-9fff-a072d7ad80ef",
+                                "expression": "(last(/SNMP Cisco BFD/ciscoBfdSessState[{#SNMPINDEX}])=2 or last(/SNMP Cisco BFD/ciscoBfdSessState[{#SNMPINDEX}])=1)",
+                                "name": "BFD Session {#SNMPVALUE} is Down/AdminDown",
+                                "priority": "HIGH",
+                                "description": "BFD Session with index {#SNMPINDEX} (Value from discovery: {#SNMPVALUE}) has entered a down(2) or administratively down(1) state.",
+                                "tags": [
+                                    {
+                                        "tag": "BFD Failure",
+                                        "value": "{#SNMPVALUE}"
+                                    }
+                                ]
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "Discovery",
+                                "value": "BFD Sessions"
+                            }
+                        ]
+                    }
+                ],
+                "valuemaps": [
+                    {
+                        "uuid": "0610ea7a-488c-425b-a162-5c7d899e63c4",
+                        "name": "SNMP BFD Admin Status",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "enabled"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "disabled"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "df30d5a5-992b-4a68-ad5f-ed229d8a1657",
+                        "name": "SNMP Boolean",
+                        "mappings": [
+                            {
+                                "value": "0",
+                                "newvalue": "false"
+                            },
+                            {
+                                "value": "1",
+                                "newvalue": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7f2c3b7c-4805-42b0-ad41-e471ac9f7a64",
+                        "name": "SNMP BFD Session State",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "adminDown"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "down"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "init"
+                            },
+                            {
+                                "value": "4",
+                                "newvalue": "up"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "364cb8e3-42ee-4e0c-8ff0-79d13503587f",
+                        "name": "SNMP BFD Session Diag",
+                        "mappings": [
+                            {
+                                "value": "0",
+                                "newvalue": "No Diagnostic"
+                            },
+                            {
+                                "value": "1",
+                                "newvalue": "Control Detection Time Expired"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "Echo Function Failed"
+                            },
+                            {
+                                "value": "3",
+                                "newvalue": "Neighbor Signaled Session Down"
+                            },
+                            {
+                                "value": "4",
+                                "newvalue": "Forwarding Plane Reset"
+                            },
+                            {
+                                "value": "5",
+                                "newvalue": "Path Down"
+                            },
+                            {
+                                "value": "6",
+                                "newvalue": "Concatenated Path Down"
+                            },
+                            {
+                                "value": "7",
+                                "newvalue": "Administratively Down"
+                            },
+                            {
+                                "value": "8",
+                                "newvalue": "Reverse Concatenated Path Down"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "26fada35-cf55-4975-b0ef-541b4fbfdda1",
+                        "name": "SNMP BFD Session OperMode",
+                        "mappings": [
+                            {
+                                "value": "1",
+                                "newvalue": "Asynchronous mode with Echo Function"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "Asynchronous mode without Echo Function"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "ec49d826-dd4a-432a-b5f7-86361d630002",
+                        "name": "SNMP BFD Address Type",
+                        "mappings": [
+                            {
+                                "value": "0",
+                                "newvalue": "Unknown"
+                            },
+                            {
+                                "value": "1",
+                                "newvalue": "IPv4"
+                            },
+                            {
+                                "value": "2",
+                                "newvalue": "IPv6"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "graphs": []
+    }
+}
